@@ -1,0 +1,6 @@
+C:\Users\Mi\IdeaProjects\order-notification-demo\notification-service\src\main\java\com\example\notification_service\event\OrderCreatedEvent.java
+C:\Users\Mi\IdeaProjects\order-notification-demo\notification-service\src\main\java\com\example\notification_service\model\Notification.java
+C:\Users\Mi\IdeaProjects\order-notification-demo\notification-service\src\main\java\com\example\notification_service\NotificationServiceApplication.java
+C:\Users\Mi\IdeaProjects\order-notification-demo\notification-service\src\main\java\com\example\notification_service\repository\NotificationRepository.java
+C:\Users\Mi\IdeaProjects\order-notification-demo\notification-service\src\main\java\com\example\notification_service\service\NotificationService.java
+C:\Users\Mi\IdeaProjects\order-notification-demo\notification-service\src\main\java\com\example\order_service\event\OrderCreatedEvent.java
