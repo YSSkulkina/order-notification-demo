@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
@@ -9,6 +7,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
     ports:
       - "2181:2181"
+    restart: unless-stopped
 
   kafka:
     image: confluentinc/cp-kafka:7.5.0
@@ -18,27 +17,36 @@ services:
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT_INTERNAL
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
     ports:
       - "9092:9092"
+    restart: unless-stopped
+
 
   postgres-order:
     image: postgres:16
     container_name: postgres-order
     environment:
       POSTGRES_DB: orderdb
-      POSTGRES_USER: orderuser
-      POSTGRES_PASSWORD: orderpass
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5433:5432"
+    restart: unless-stopped
 
   postgres-notification:
     image: postgres:16
     container_name: postgres-notification
     environment:
       POSTGRES_DB: notificationdb
-      POSTGRES_USER: notifuser
-      POSTGRES_PASSWORD: notifpass
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
     ports:
       - "5434:5432"
+    restart: unless-stopped
