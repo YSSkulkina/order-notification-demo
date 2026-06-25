@@ -1,4 +1,13 @@
 # 🚀 Order Notification Demo
+![Java](https://img.shields.io/badge/Java-17-orange)
+
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.2-green)
+
+![Kafka](https://img.shields.io/badge/Kafka-Event_Driven-black)
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)
+
+![Docker](https://img.shields.io/badge/Docker-Compose-2496ED)
 
 A demo project that demonstrates **event-driven microservice architecture** using **Spring Boot**, **Apache Kafka**, and **PostgreSQL**.
 
