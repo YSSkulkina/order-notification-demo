@@ -1,6 +1,0 @@
-com\example\notification_service\NotificationServiceApplication.class
-com\example\notification_service\repository\NotificationRepository.class
-com\example\notification_service\event\OrderCreatedEvent.class
-com\example\order_service\event\OrderCreatedEvent.class
-com\example\notification_service\model\Notification.class
-com\example\notification_service\service\NotificationService.class
